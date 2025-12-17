@@ -6,8 +6,6 @@ services:
     hostname: kafka
     container_name: kafka
     mem_limit: 2g
-    environment:
-      KAFKA_HEAP_OPTS: "-Xms512m -Xmx1g"
     ports:
       - "9092:9092"
     volumes:
@@ -28,6 +26,7 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
+      KAFKA_HEAP_OPTS: "-Xms512m -Xmx1g"
 
 networks:
   ml-net:
