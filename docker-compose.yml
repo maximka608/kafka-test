@@ -26,20 +26,6 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
 
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    container_name: kafka-ui
-    depends_on:
-      - kafka
-    ports:
-      - "9091:9091"
-    networks:
-      - ml-net
-    environment:
-      KAFKA_CLUSTERS_0_NAME: local_kraft
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
-      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: PLAINTEXT
-
 networks:
   ml-net:
     external: true
