@@ -5,6 +5,9 @@ services:
     image: confluentinc/cp-kafka:7.6.1
     hostname: kafka
     container_name: kafka
+    mem_limit: 2g
+    environment:
+      KAFKA_HEAP_OPTS: "-Xms512m -Xmx1g"
     ports:
       - "9092:9092"
     volumes:
